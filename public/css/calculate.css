@@ -1,0 +1,62 @@
+.calculate-box {
+    margin-top: 60px;
+}
+.calculate-box .calculate-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calculate-box .calculater {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calculater .input-have {
+    border-radius: 13px;
+    padding: 5px 15px;
+    margin-bottom: 7px;
+}
+.calculater .input-buy {
+    border-radius: 13px;
+    padding: 5px 15px;
+    margin-top: 7px;
+}
+.calculater .input-have input {
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    margin: 5px 0 ;
+}
+.calculater .input-buy input {
+    border-radius: 10px;
+    height: 30px;
+    width: 316px;
+    margin: 5px 0 ;
+}
+.calculate-box .calculate-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.calculate-box .calculate-btn button {
+    width: 400px;
+    height: 50px;
+    border-radius: 13px;
+    background-color: #B3DAF2;
+    border: solid #B3DAF2;
+    font-size: 25px;
+}
+.calculate-box .output-box {
+    text-align: center;
+    font-size: 25px;
+}
+.highlight-increase {
+    font-weight: bold;
+    color: red;
+}
+.highlight-decrease {
+    font-weight: bold;
+    color: blue;
+}

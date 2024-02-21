@@ -1,0 +1,71 @@
+<%-include('header.ejs')-%>
+<!---------------------------------------------------------->
+<div class="calculate-box">
+    <div class="calculate-title">
+        <h1>물타기 계산기</h1>
+    </div>
+    <div class="calculater">
+        <div class="input-box">
+            <div class="input-have">
+                <div>
+                    <label for="havePrice">기존 평단가 :</label>
+                    <input type="number" id="havePrice">
+                </div>
+                <div>
+                    <label for="haveQuantity">보유한 수량 :</label>
+                    <input type="number" id="haveQuantity">
+                </div>
+            </div>
+            <div class="input-buy">
+                <div>
+                    <label for="buyPrice">매수 단가 :</label>
+                    <input type="number" id="buyPrice">
+                </div>
+                <div>
+                    <label for="buyQuantity">매수 수량 :</label>
+                    <input type="number" id="buyQuantity">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="calculate-btn">
+        <button onclick="calculateAverage()">Calculate!</button>
+    </div>
+    <div class="output-box">
+        <p id="oldAverage"></p>
+        <p id="newAverage"></p>
+        <p id="rate"></p>
+    </div>
+</div>
+<!---------------------------------------------------------->
+<script>
+    function calculateAverage() {
+        var havePrice = Number(document.getElementById("havePrice").value);
+        var haveQuantity = Number(document.getElementById("haveQuantity").value);
+        var buyPrice = Number(document.getElementById("buyPrice").value);
+        var buyQuantity = Number(document.getElementById("buyQuantity").value);
+
+        var oldAverage = havePrice * haveQuantity / haveQuantity;
+        var newAverage = ((havePrice * haveQuantity) + (buyPrice * buyQuantity)) / (haveQuantity + buyQuantity)
+
+        var rate = ((newAverage - oldAverage) / oldAverage) * 100;
+
+        if (!havePrice || !haveQuantity || !buyPrice || !buyQuantity) {
+        alert('모든 빈칸에 숫자를 입력하세요!');
+        return;
+        }
+
+        document.getElementById("oldAverage").innerHTML = "기존 평단가: " + oldAverage.toFixed(1);
+        document.getElementById("newAverage").innerHTML = "새로운 평단가: " + newAverage.toFixed(1); 
+
+        if (rate > 0) {
+            document.getElementById("rate").innerHTML = "기존보다 <span class='highlight-increase'>" + rate.toFixed(1) + "%</span> 증가";
+        } else if (rate < 0) {
+            document.getElementById("rate").innerHTML = "기존보다 <span class='highlight-decrease'>" + rate.toFixed(1) + "%</span> 감소";
+        } else {
+            document.getElementById("rate").innerHTML = "기존과 같습니다!";
+        }
+    }
+</script>
+<!---------------------------------------------------------->
+<%-include('footer.ejs')-%>

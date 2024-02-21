@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* background-color: #fcdc7b; */
+    /* border: 1px solid black; */
+}
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+header .highlight {
+    color: #BF2633;
+}
+body {
+    background-image: url('../main_bg_img.jpg');
+    /* background-attachment: fixeds; */
+    /* background-size: over; */
+}
