@@ -2,49 +2,40 @@
 <!---------------------------------------------------------->
 <div class="result-box">
     <div class="stock-name">
-        <h1>주식이름</h1>
+        <h1><%= stockName %></h1>
     </div>
     <div class="stock-info">
         <div class="info-box">
             <div class="info-style-1">
                 <p class="sub-title">Price</p>
-                <p>$$$$$</p>
+                <p class="marketPrice"><%= marketPrice %></p>
             </div>
             <div class="info-style-2">
                 <p class="sub-title">EPS</p>
-                <p>$$$$$</p>
+                <p class="marketEPS"><%= marketEPS %></p>
             </div>
             <div class="info-style-1">
                 <p class="sub-title">PER</p>
-                <p>$$$$$</p>
+                <p class="marketPER"><%= marketPER %></p>
             </div>
             <div class="info-style-2">
                 <p class="sub-title">BPS</p>
-                <p>$$$$$</p>
+                <p class="marketBPS"><%= marketBPS %></p>
             </div>
             <div class="info-style-1">
                 <p class="sub-title">PBR</p>
-                <p>$$$$$</p>
+                <p class="marketPBR"><%= marketPBR %></p>
             </div>
             <div class="info-style-2">
                 <p class="sub-title">ROE</p>
-                <p>$$$$$</p>
+                <p class="marketROE"><%= marketROE %>></p>
             </div>
         </div>
     </div>
 </div>
 <!---------------------------------------------------------->
 <script>
-    // 미구현
-    // var container = document.querySelector('.info-style-1')
-    // container.addEventListener('mousemove', function(e){
-    //     var x = e.offsetX
-    //     var y = e.offsetY
-    //     console.log(x, y);
-    //     var rotateY = -1/5 * x + 20
-    //     var rotateX = -1/5 * y + 20
-    //     container.style = `transform : perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-    // })
+
 </script>
 <!---------------------------------------------------------->
 <%-include('footer.ejs')-%>

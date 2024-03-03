@@ -4,12 +4,16 @@
     <div class="title">
         <h1><span class="highlight">E</span>asy <span class="highlight">S</span>tock <span class="highlight">S</span>earching</h1>
     </div>
-    <div class="search">
-        <input type="text">
-    </div>
-    <div class="searching-btn">
-        <a href="/result">Searching!</a>
-    </div>
+    <form action="/result" method="GET">
+        <div class="search-box">
+            <div class="search">
+                <input type="text" name="stockName" placeholder="주식 코드 입력">
+            </div>
+            <div class="searching-btn">
+                <button type="submit">Searching!</button>
+            </div>
+        </div>
+    </form>
 </div>
 <div class="empty-box"></div>
  <!---------------------------------------------------------->

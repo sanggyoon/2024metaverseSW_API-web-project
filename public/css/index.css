@@ -40,7 +40,7 @@
     margin-top: 60px;
     margin-bottom: 60px;
 }
-.main-box .searching-btn a {
+.main-box .searching-btn button {
     border: 3.5px solid white;
     border-radius: 13px;
     padding: 7px 30px;
@@ -48,8 +48,9 @@
     font-size: 20px;
     font-weight: bold;
     color: white;
+    background-color: transparent;
 }
-.main-box .searching-btn a:hover {
+.main-box .searching-btn button:hover {
     background-color: #04BFBF;
     border: 3.5px solid #04BFBF;
     color: white;
