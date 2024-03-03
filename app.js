@@ -21,8 +21,8 @@ app.get('/calculate', (req, res) => {
 })
 
 //-----------------------------------------------------------
-//API result페이지에 연결 
 
+//API 토큰 연결 
 function getAccessToken() {
   return axios({
     method: 'post',
@@ -35,6 +35,7 @@ function getAccessToken() {
     })
   })
   .then(response => {
+    console.log('Token:', response.data.access_token); //확인
     return response.data.access_token;
   })
   .catch(error => {
@@ -43,8 +44,10 @@ function getAccessToken() {
   });
 }
 
+//api 데이터 연결
 app.get('/result', (req, res) => {
   const stockName = req.query.stockName;
+  console.log('Stock Name:', stockName); //확인
   getAccessToken().then(token => {
     axios.get('https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price', {
       headers: {
@@ -59,6 +62,7 @@ app.get('/result', (req, res) => {
       }
     })
     .then(response => {
+      console.log('Response:', response.data); //확인
       const data = response.data.output;
       res.render('result', {
         stockName: stockName, 
